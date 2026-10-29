@@ -49,12 +49,12 @@ export default function HowItWorks({ params, e }: { params: Params; e: Economy }
     },
     {
       what: "Партии",
-      how: "кг / чаша меланжёра, вверх до целого. Партия идёт почти сутки, поэтому партия = день работы",
+      how: "кг / чаша меланжёра, вверх до целого. Партия крутится почти сутки сама — это занятый день, а не часы работника. Дальше партии идут в «Работник» и в проверку дней",
       now: `${kg} / ${formatNum(e.melanger.batchKg, 0)} кг → ${batchesLabel(e.batches)}`,
     },
     {
       what: "Работник",
-      how: "(партии × часы на партию + кг × часы на кг) × ставка",
+      how: "(партии × часы на партию + кг × часы на кг) × ставка. Часы на партию — только ручная работа, без времени, пока крутит меланжёр",
       now: `(${e.batches} × ${formatNum(params.batchFixedHours, 2)} + ${kg} × ${formatNum(params.perKgHours, 2)}) = ${formatNum(e.laborHours, 1)} ч × ${kc(params.laborRate)} = ${kc(e.costs.labor)}`,
     },
     {

@@ -56,7 +56,7 @@ export default function ProductionSettings({
         <Field label="Ставка работника, Kč/ч" hint="Сколько стоит час того, кто делает шоколад: работника или ваш, если делаете сами.">
           <Num value={params.laborRate} min={0} step={10} onChange={(laborRate) => setParams({ laborRate })} />
         </Field>
-        <Field label="Часы на одну партию" hint="Загрузка меланжёра, темперирование, мойка. Не зависит от кг.">
+        <Field label="Часы на одну партию" hint="Только руками: загрузить меланжёр, темперировать, помыть — не зависит от кг. Пока меланжёр крутит сам, часы не идут; если кто-то должен сидеть рядом, впишите и эти часы.">
           <Num
             value={params.batchFixedHours}
             step={0.25}
